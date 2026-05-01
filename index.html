@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Thereza | Fotografia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Jim+Nightshade&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Troque o link abaixo pelo caminho da foto real da Maria -->
+            <img src="img/logofotografia.jpeg" alt="Foto de Maria Thereza" class="header-foto">
+            <span class="nome">Fotografia P&B</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfólio</h2>
+            <p class="gallery-hint">Clique em cima da foto para ampliá-la</p>
+            <div class="gallery">
+                <!-- Imagens de exemplo do Unsplash/Picsum para você visualizar o layout -->
+                <div class="gallery-item"><img src="img/foto1.jpeg" alt="Fotografia 1"></div>
+                <div class="gallery-item"><img src="img/foto2.jpeg" alt="Fotografia 2"></div>
+                <div class="gallery-item"><img src="img/foto3.jpeg" alt="Fotografia 3"></div>
+                <div class="gallery-item"><img src="img/foto4.jpeg" alt="Fotografia 4"></div>
+                <div class="gallery-item"><img src="img/foto5.jpeg" alt="Fotografia 5"></div>
+                <div class="gallery-item"><img src="img/foto6.jpeg" alt="Fotografia 6"></div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p style="font-size: 1.5rem; font-family: 'Roboto', sans-serif;">Olá! Sou Maria Thereza, uma fotógrafa apaixonada por contar histórias através das lentes. Com mais de 5 anos de experiência, busco a luz perfeita para transformar instantes comuns em obras de arte inesquecíveis.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Vamos conversar?</h2>
+            <h3>Gostou do meu trabalho? Entre em contato para agendarmos a sua sessão.</p>
+            <div class="social-links">
+                <!-- Lembre-se de colocar os links reais nos href abaixo -->
+                <a href="https://instagram.com/seuusuario" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5511900000000" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Maria Thereza Fotografia. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Modal (Pop-up da Galeria) -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
+
+    <script>
+        // Lógica do Pop-up (Modal)
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("imgModal");
+        const fecharBtn = document.querySelector(".close-modal");
+        const fotos = document.querySelectorAll(".gallery-item img");
+
+        // Adiciona o evento de clique para abrir cada foto
+        fotos.forEach(foto => {
+            foto.addEventListener("click", function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src; // Copia a fonte da imagem clicada para o pop-up
+            });
+        });
+
+        // Fecha o modal ao clicar no "X" ou fora da foto
+        modal.addEventListener("click", function(e) {
+            if (e.target !== modalImg) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

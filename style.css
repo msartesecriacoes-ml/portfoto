@@ -1,0 +1,220 @@
+/* Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jim Nightshade', cursive;
+    color: #f0f0f0;
+    line-height: 1.6;
+    background-color: #0a0a0a;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+/* Cabeçalho & Navegação */
+header {
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.header-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome {
+    font-size: 4.0rem;
+    color: #f0f0f0;
+    text-transform: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    font-size: 2.0rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #aaa;
+}
+
+/* Seção Hero (Destaque Inicial) */
+#hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('img/foto7.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
+}
+
+#hero h1 {
+    font-weight: 400;
+    font-size: 4.5rem;
+    max-width: 800px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo Geral das Seções */
+section {
+    padding: 4rem 5%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gallery-hint {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: -2.5rem;
+    margin-bottom: 2.5rem;
+    color: #aaa;
+}
+
+/* Galeria em Grid (O segredo do portfólio) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 350px;
+    gap: 1.5rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Seção de Contato */
+#contato {
+    text-align: center;
+    background-color: #111;
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.social-links a {
+    color: #f0f0f0;
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #888;
+    transform: translateY(-5px);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #111;
+    font-size: 0.9rem;
+    color: #999;
+    border-top: 1px solid #333;
+}
+
+/* Estilos do Modal (Pop-up) */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.8)} 
+    to {transform: scale(1)}
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #aaa;
+}
